@@ -1,5 +1,6 @@
 # simple-ansible-setup
 
+Up the virtual box and test ssh into box
 ```
 vagrant up
 ssh vagrant@10.100.199.200
@@ -7,7 +8,7 @@ ssh vagrant@10.100.199.200
 
 # Test connections to the vagrant box
 
-Up the four VMs, as specified in your inventory file:
+Up the four VMs, as specified in your inventory file. Pass is 'vagrant':
 ```
 ansible all --ask-pass -i ./ansible/hosts/local -m ping
 ```
@@ -17,9 +18,7 @@ Run Ansible playbook for nginx against the box just upped.
 ansible-playbook --ask-pass ./ansible/nginx.yml -i ./ansible/hosts/local
 ```
 
-
-# Some Ansible Notes
-
+# Ansible structure
 From root:
 - ./xxx.yml is the playbook. It describes what roles should be applied to what hosts.
 - ./group_vars/all. Contains variable that are valid throughout all Ansible modules
@@ -33,6 +32,8 @@ Per role-folder (./role):
  - files/xxx.xx is one or more files that need to be copied over.
  - templates/xxx.conf.js is one or more jinja2 template files in which variable are automatically populated by Ansible (i.e with items set in defaults or vars from host_vars).
 
+
+# Some notes
 Playbooks >> Tasks >> Modules
 Task include files make sharing of tasks over playbooks easier.
 Roles can be applied to servers and basically group a set of tasks.
