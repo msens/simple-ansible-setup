@@ -1,8 +1,8 @@
-# prerequisites
+# Prerequisites
 Make sure you have Ansible installed on your host.
 Make sure you have Virtualbox and Vagrant installed on your host.
 
-# simple-ansible-setup
+# Simple-ansible-setup
 
 This ansible setup provisions a virtual box with nginx.
 Up the virtual box and test ssh into box.
