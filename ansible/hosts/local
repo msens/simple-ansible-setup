@@ -1,0 +1,13 @@
+[ekip-remote]
+10.100.199.200	ansible_ssh_connection=ssh	ansible_ssh_user=vagrant
+
+[nginx]
+10.100.199.200
+
+#[ekip-local]
+#ansible_ssh_connection=local
+
+#[otherstuff]
+# 10.10.10.10.x
+# 10.10.10.10.x
+# 10.10.10.10.x

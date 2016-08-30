@@ -1,0 +1,3 @@
+## apt-get list addition to be able to pull nginx
+deb http://nginx.org/packages/ubuntu/ Trusty nginx
+deb-src http://nginx.org/packages/ubuntu/ Trusty nginx

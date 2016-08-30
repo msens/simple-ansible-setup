@@ -1,0 +1,33 @@
+- name: Directories are present
+  file:
+    dest: "{{ item }}"
+    state: directory
+  with_items: directories
+  tags: [nginx]
+
+- name: Files are present
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+  with_items: files
+  tags: [nginx]
+
+- name: Package is present
+  apt:
+    name=nginx
+    state=present
+  tags: [nginx]
+
+- name: nginx config files are present
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items: templates
+  register: result
+  tags: [nginx]
+
+- name: nginx is restarted
+  service: 
+    name: nginx
+    state: restarted
+  when: result|changed
+  tags: [nginx]

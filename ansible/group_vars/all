@@ -1,0 +1,4 @@
+# variables applicable to -all- ansible scripts below
+
+group_var_test: "a value of a group var"
+group_host_var_test: "{{host_var_for_in_group_var}}"

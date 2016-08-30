@@ -1,0 +1,13 @@
+directories:
+  - /etc/apt/sources.list.d/
+
+files: [
+  { src: "nginx.list", dest: "/etc/apt/sources.list.d/nginx.list", mode: "0755" }
+]
+
+ports:
+  - '80:80'
+
+templates: [
+  {src: 'services.conf.j2', dest: '/data/nginx/conf.d/services.conf'}
+]
