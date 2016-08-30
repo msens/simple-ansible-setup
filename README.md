@@ -34,10 +34,6 @@ Per role-folder (./role):
 
 
 # Some notes
-Playbooks >> Tasks >> Modules
-Task include files make sharing of tasks over playbooks easier.
-Roles can be applied to servers and basically group a set of tasks.
-The goal of a playbook is to map a group of systems into multiple roles.
 
 In case of
 ```
