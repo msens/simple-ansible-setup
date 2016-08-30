@@ -13,7 +13,7 @@ ssh vagrant@10.100.199.200
 
 # Test connections to the vagrant box
 
-Up the four VMs, as specified in your inventory file. Pass is 'vagrant':
+To test connection to your virtual box execute lines below. Pass is 'vagrant':
 ```
 ansible all --ask-pass -i ./ansible/hosts/local -m ping
 ```
