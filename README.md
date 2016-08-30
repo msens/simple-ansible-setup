@@ -1,6 +1,6 @@
 # Prerequisites
-Make sure you have Ansible installed on your host.
-Make sure you have Virtualbox and Vagrant installed on your host.
+1. Make sure you have Ansible installed on your host.
+2. Make sure to have Virtualbox and Vagrant installed on your host.
 
 # Simple-ansible-setup
 
