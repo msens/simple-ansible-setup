@@ -51,10 +51,10 @@ ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
 
 # Ansible structure
 From ansible-root:
-- ./xxx.yml is the playbook per host. For each host, this describes what roles should be applied and how it should be done (sudo or not and with what user).
+- ./xxx.yml is the playbook for each type of host that is defined. For eacht type, it describes what roles should be applied and how it should be done.
+- ./hosts/local is the inventory file and describes which host-types should be applied to what ip adresses/hosts. It describes the target landscape.
 - ./group_vars/all. Contains variable that are valid throughout all Ansible modules
 - ./host_vars/<ip>. Contains variable specifi to a host with specific IP.
-- ./hosts/local is the inventory file and describes which host has which ip adresses. It describes the target landscape.
 - ./roles is the location in which each role described. One folder per role. It describes what is required for a system to fulfill a  role (jenkins, docker, nginx, apache, mysql)
 
 Per role-folder (./role):
