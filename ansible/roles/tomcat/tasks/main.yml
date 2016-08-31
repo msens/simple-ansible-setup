@@ -1,0 +1,11 @@
+- name: Package is present
+  apt:
+    name=tomcat7
+    state=present
+  tags: [tomcat]
+
+- name: Tomcat Admin UI is present
+  apt:
+    name=tomcat7-admin
+    state=present
+  tags: [tomcat]

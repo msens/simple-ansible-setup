@@ -1,0 +1,6 @@
+- hosts: tomcat
+  serial: 1
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - tomcat

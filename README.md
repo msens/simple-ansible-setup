@@ -4,11 +4,26 @@
 
 # Simple-ansible-setup
 
-This ansible setup provisions a virtual box with nginx.
-Up the virtual box and test ssh into box.
+This ansible setup provisions some virtual boxes with nginx . tomcat etc.
+Up the virtual boxes and test ssh into the boxes to add fingerprints to known_hosts file.
 ```
 vagrant up
-ssh vagrant@10.100.199.200
+ssh vagrant@10.100.199.201
+ssh vagrant@10.100.199.202
+```
+
+In case of
+```
+fatal: [10.100.199.201] => SSH Error: Host key verification failed.
+```
+or
+```
+fatal: [10.100.199.201] => {'msg': "FAILED: ('10.100.199.201', <paramiko.rsakey.RSAKey object at 0x1085649d0>, <paramiko.rsakey.RSAKey object at 0x10857e450>)", 'failed': True}
+```
+
+..... remove fingerprint for this host from your ~/.ssh/known_hosts file.
+```
+vim ~/.ssh/known_hosts
 ```
 
 # Test connections to the vagrant box
@@ -18,10 +33,21 @@ To test connection to your virtual box execute lines below. Pass is 'vagrant':
 ansible all --ask-pass -i ./ansible/hosts/local -m ping
 ```
 
-Run Ansible playbook for nginx against the box just upped. 
+Run Ansible playbooks on a per playbook basis against the boxes just upped. 
 ```
 ansible-playbook --ask-pass ./ansible/nginx.yml -i ./ansible/hosts/local
+ansible-playbook --ask-pass ./ansible/tomcat.yml -i ./ansible/hosts/local
 ```
+
+Or run all at once. 
+```
+ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
+```
+
+# urls
+Access nginx when installed on vm1: http://10.100.199.201:80/
+Access tomcat when installed on vm2: http://10.100.199.202:8080/
+
 
 # Ansible structure
 From root:
