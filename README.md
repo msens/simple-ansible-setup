@@ -45,13 +45,13 @@ ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
 ```
 
 # urls
-Access nginx when installed on vm1: http://10.100.199.201:80/
-Access tomcat when installed on vm2: http://10.100.199.202:8080/
+- Access nginx when installed on vm1: http://10.100.199.201:80/
+- Access tomcat when installed on vm2: http://10.100.199.202:8080/
 
 
 # Ansible structure
-From root:
-- ./xxx.yml is the playbook. It describes what roles should be applied to what hosts.
+From ansible-root:
+- ./xxx.yml is the playbook per host. For each host, this describes what roles should be applied and how it should be done (sudo or not and with what user).
 - ./group_vars/all. Contains variable that are valid throughout all Ansible modules
 - ./host_vars/<ip>. Contains variable specifi to a host with specific IP.
 - ./hosts/local is the inventory file and describes which host has which ip adresses. It describes the target landscape.
