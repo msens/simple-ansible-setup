@@ -21,9 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 1024
   end
 
-(1..2).each do |i|
-    config.vm.define "ansible-target-0#{i}" do |node|
-      node.vm.hostname = "ansible-target-0#{i}"
+(1..3).each do |i|
+    config.vm.define "target0#{i}" do |node|
+      node.vm.hostname = "target0#{i}"
       node.vm.network "private_network", ip: "10.100.199.20#{i}"
 #      node.vm.network "forwarded_port", guest: 8080, host: 808#{i}
 #     node.vm.provision :shell, path: "bootstrap.sh"

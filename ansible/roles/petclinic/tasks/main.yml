@@ -1,0 +1,22 @@
+- name: Directories are present
+  file:
+    dest: "{{ item }}"
+    state: directory
+  with_items: directories
+  tags: [petclinic]
+
+- name: Files are present
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+  with_items: files
+  register: result
+  tags: [petclinic]
+
+#- name: tomcat is restarted
+#  service: 
+#    name: tomcat
+#    state: restarted
+#  when: result|changed
+#  tags: [petclinic]

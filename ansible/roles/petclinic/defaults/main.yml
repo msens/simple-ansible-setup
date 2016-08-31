@@ -1,0 +1,6 @@
+directories:
+  - /var/lib/tomcat7/webapps
+
+files: [
+  { src: "petclinic.war", dest: "/var/lib/tomcat7/webapps/petclinic.war", mode: "0755" }
+]

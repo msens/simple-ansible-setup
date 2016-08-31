@@ -10,6 +10,7 @@ Up the virtual boxes and test ssh into the boxes to add fingerprints to known_ho
 vagrant up
 ssh vagrant@10.100.199.201
 ssh vagrant@10.100.199.202
+ssh vagrant@10.100.199.203
 ```
 
 In case of
@@ -46,7 +47,10 @@ ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
 
 # urls
 - Access nginx when installed on vm1: http://10.100.199.201:80/
-- Access tomcat when installed on vm2: http://10.100.199.202:8080/
+- Access tomcat installed on vm2: http://10.100.199.202:8080/
+- Access tomcat installed on vm3: http://10.100.199.203:8080/
+- Access petclinic installed on vm2: http://10.100.199.202:8080/petclinic
+- Access petclinic installed on vm3: http://10.100.199.202:8080/petclinic
 
 
 # Ansible structure
@@ -74,3 +78,13 @@ remove fingerprint for this host from your ~/.ssh/known_hosts file.
 ```
 vim ~/.ssh/known_hosts file
 ```
+
+Note that on Ubuntu, tomcat is installed over following directories:
+- /etc/tomcat7 - properties and policies
+- /usr/share/tomcat7 - scripts, binaries
+- /var/cache/tomcat7
+- /var/lib/tomcat7 - webapps
+- /var/log/tomcat7 - logs
+- /etc/default
+
+
