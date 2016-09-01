@@ -25,6 +25,13 @@
   register: result
   tags: [nginx]
 
+- name: Default file is removed so run as loadbalancer
+  file:
+    path: "/etc/nginx/sites-available/default"
+    state: absent
+  register: result
+  tags: [nginx]
+
 - name: nginx is restarted
   service: 
     name: nginx

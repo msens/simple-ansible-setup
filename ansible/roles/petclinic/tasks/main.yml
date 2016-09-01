@@ -5,13 +5,13 @@
   with_items: directories
   tags: [petclinic]
 
-- name: Files are present
-  copy:
-    src: "{{ item.src }}"
+- name: download files from s3
+  get_url:
+    url: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    timeout: 240
     mode: "{{ item.mode }}"
-  with_items: files
-  register: result
+  with_items: files_to_download
   tags: [petclinic]
 
 #- name: tomcat is restarted

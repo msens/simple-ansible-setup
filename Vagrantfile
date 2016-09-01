@@ -25,7 +25,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define "target0#{i}" do |node|
       node.vm.hostname = "target0#{i}"
       node.vm.network "private_network", ip: "10.100.199.20#{i}"
-#      node.vm.network "forwarded_port", guest: 8080, host: 808#{i}
 #     node.vm.provision :shell, path: "bootstrap.sh"
 
     end

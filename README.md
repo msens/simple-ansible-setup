@@ -47,6 +47,8 @@ ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
 
 # urls
 - Access nginx when installed on vm1: http://10.100.199.201:80/
+- Access any of the two backend tomcats through loadbalancer: http://10.100.199.201:81/
+- Access any of the two backend tomcat petclinics through loadbalancer: http://10.100.199.201:81/petclinic
 - Access tomcat installed on vm2: http://10.100.199.202:8080/
 - Access tomcat installed on vm3: http://10.100.199.203:8080/
 - Access petclinic installed on vm2: http://10.100.199.202:8080/petclinic
@@ -70,15 +72,16 @@ Per role-folder (./role):
 
 # Some notes
 
-In case of
+## In case of issues 
 ```
 fatal: [10.100.199.200] => SSH Error: Host key verification failed.
 ```
 remove fingerprint for this host from your ~/.ssh/known_hosts file.
 ```
-vim ~/.ssh/known_hosts file
+vim ~/.ssh/known_hosts
 ```
 
+## Tomcat directory structure
 Note that on Ubuntu, tomcat is installed over following directories:
 - /etc/tomcat7 - properties and policies
 - /usr/share/tomcat7 - scripts, binaries
@@ -87,4 +90,14 @@ Note that on Ubuntu, tomcat is installed over following directories:
 - /var/log/tomcat7 - logs
 - /etc/default
 
+## nginx
+Use the following to see status / log of nginx on node1:
+```
+sudo nginx
+```
+
+Kill all processes running on port 80:
+```
+sudo fuser -k 80/tcp
+```
 

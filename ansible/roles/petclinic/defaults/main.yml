@@ -4,3 +4,7 @@ directories:
 files: [
   { src: "petclinic.war", dest: "/var/lib/tomcat7/webapps/petclinic.war", mode: "0755" }
 ]
+
+files_to_download: [
+  { src: "https://s3.amazonaws.com/elasticbeanstalk-us-east-1-304633712831/myresources/petclinic.war", dest: "/var/lib/tomcat7/webapps/petclinic.war", mode: "0755" }
+]
