@@ -1,0 +1,5 @@
+- name: Package is present
+  apt:
+    name=yum
+    state=present
+  tags: [git]

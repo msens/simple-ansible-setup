@@ -40,6 +40,13 @@ ansible-playbook --ask-pass ./ansible/nginx.yml -i ./ansible/hosts/local
 ansible-playbook --ask-pass ./ansible/tomcat.yml -i ./ansible/hosts/local
 ```
 
+Or run Ansible playbooks on per tag. 
+```
+ansible-playbook --ask-pass ./ansible/nginx.yml -i ./ansible/hosts/local -t section 6
+ansible-playbook --ask-pass ./ansible/tomcat.yml -i ./ansible/hosts/local
+```
+
+
 Or run all at once. 
 ```
 ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
@@ -100,4 +107,17 @@ Kill all processes running on port 80:
 ```
 sudo fuser -k 80/tcp
 ```
+
+## cis
+In cis module, the following polocies have been disabled for now.
+For more info on cis, please see the following vid: https://www.youtube.com/watch?v=8h_Y-L1Q8xI
+
+ - name: 1.5.5 Disable Interactive Boot (Scored)
+ - name: 3.1 Set Daemon umask (Scored)
+ - name: 3.2 Remove X Windows (runlevel 3) (Scored)
+ - name: 5.1.4 Create and Set Permissions on rsyslog Log Files (Scored)
+ - All off leverl 5.2!
+ - All off 6.3
+ - 9.2.1
+ - 9.2.5.
 
