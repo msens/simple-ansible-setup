@@ -54,8 +54,8 @@ ansible-playbook --ask-pass ./ansible/all.yml -i ./ansible/hosts/local
 
 # urls
 - Access nginx when installed on vm1: http://10.100.199.201:80/
-- Access any of the two backend tomcats through loadbalancer: http://10.100.199.201:81/
-- Access any of the two backend tomcat petclinics through loadbalancer: http://10.100.199.201:81/petclinic
+- Access any of the two backend tomcats through loadbalancer: http://10.100.199.201:80/
+- Access any of the two backend tomcat petclinics through loadbalancer: http://10.100.199.201:80/petclinic
 - Access tomcat installed on vm2: http://10.100.199.202:8080/
 - Access tomcat installed on vm3: http://10.100.199.203:8080/
 - Access petclinic installed on vm2: http://10.100.199.202:8080/petclinic
