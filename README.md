@@ -121,3 +121,21 @@ For more info on cis, please see the following vid: https://www.youtube.com/watc
  - 9.2.1
  - 9.2.5.
 
+CIS (Center of Internet Security: nonprofit security organisatie)
+- Ansible role
+- https://github.com/major/cis-rhel-ansible/tree/master/roles/cis
+
+Guide:
+- https://benchmarks.cisecurity.org/downloads/show-single/?file=rhel6.140
+
+STIG (by DISA for Department of Defense)
+- Ansible role
+- https://github.com/MindPointGroup/RHEL6-STIG
+
+Guide:
+- https://www.stigviewer.com/stig/red_hat_enterprise_linux_6/
+
+And SSG (Scap security guide).
+openscap project/redhat flavoured profiles "borrowed" from CIS and STIG.
+profiles available through  Openscap project with "opencsap security guide".
+When you install packages of openscap/scap security guide on redhat you'll get stig profiles for free. 
